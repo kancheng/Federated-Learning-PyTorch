@@ -9,10 +9,17 @@ Experiments are produced on MNIST, Fashion MNIST and CIFAR10 (both IID and non-I
 Since the purpose of these experiments are to illustrate the effectiveness of the federated learning paradigm, only simple models such as MLP and CNN are used.
 
 ## Requirments
+
 Install all the packages from requirments.txt
+
 * Python3 -> Python 3.7
 * Pytorch -> 對應 Python 3.7 的 Pytorch 版本
 * Torchvision
+
+```
+pip install -r requirments.txt
+pip install tqdm
+```
 
 ## Data
 * Download train and test datasets manually or they will be automatically downloaded from torchvision datasets.
