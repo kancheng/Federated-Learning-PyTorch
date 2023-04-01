@@ -1,7 +1,8 @@
-# Federated-Learning (PyTorch)
+# Federated-Learning on PyTorch
+
+FedAvg 的實現
 
 Implementation of the vanilla federated learning paper : [Communication-Efficient Learning of Deep Networks from Decentralized Data](https://arxiv.org/abs/1602.05629).
-
 
 Experiments are produced on MNIST, Fashion MNIST and CIFAR10 (both IID and non-IID). In case of non-IID, the data amongst the users can be split equally or unequally.
 
@@ -9,8 +10,8 @@ Since the purpose of these experiments are to illustrate the effectiveness of th
 
 ## Requirments
 Install all the packages from requirments.txt
-* Python3
-* Pytorch
+* Python3 -> Python 3.7
+* Pytorch -> 對應 Python 3.7 的 Pytorch 版本
 * Torchvision
 
 ## Data
@@ -19,6 +20,7 @@ Install all the packages from requirments.txt
 * To use your own dataset: Move your dataset to data directory and write a wrapper on pytorch dataset class.
 
 ## Running the experiments
+
 The baseline experiment trains the model in the conventional way.
 
 * To run the baseline experiment with MNIST on MLP using CPU:
@@ -27,7 +29,7 @@ python src/baseline_main.py --model=mlp --dataset=mnist --epochs=10
 ```
 * Or to run it on GPU (eg: if gpu:0 is available):
 ```
-python src/baseline_main.py --model=mlp --dataset=mnist --gpu=0 --epochs=10
+python src/baseline_main.py --model=mlp --dataset=mnist --gpu=cuda:0 --epochs=10
 ```
 -----
 
@@ -35,11 +37,11 @@ Federated experiment involves training a global model using many local models.
 
 * To run the federated experiment with CIFAR on CNN (IID):
 ```
-python src/federated_main.py --model=cnn --dataset=cifar --gpu=0 --iid=1 --epochs=10
+python src/federated_main.py --model=cnn --dataset=cifar --gpu=cuda:0 --iid=1 --epochs=10
 ```
 * To run the same experiment under non-IID condition:
 ```
-python src/federated_main.py --model=cnn --dataset=cifar --gpu=0 --iid=0 --epochs=10
+python src/federated_main.py --model=cnn --dataset=cifar --gpu=cuda:0 --iid=0 --epochs=10
 ```
 
 You can change the default values of other parameters to simulate different conditions. Refer to the options section.
