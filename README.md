@@ -21,6 +21,13 @@ pip install -r requirments.txt
 pip install tqdm
 ```
 
+## Note
+
+1. 基于 Communication-Efficient Learning of Deep Networks from Decentralized Data 文章的 FedAvg 模型复现 : https://zhuanlan.zhihu.com/p/487648679
+
+2. NigeloYang / federated_learning_differential_privacy : https://gitee.com/yangqiantao/federated_learning_differential_privacy/tree/master/Federated_Learning/paper_model/FedAvg/pytorch
+
+
 ## Data
 * Download train and test datasets manually or they will be automatically downloaded from torchvision datasets.
 * Experiments are run on Mnist, Fashion Mnist and Cifar.
